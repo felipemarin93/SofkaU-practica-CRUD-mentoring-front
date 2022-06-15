@@ -26,9 +26,19 @@
     </style>
   </head>
   <body>
-        
-    <div class="container mt-4 shadow-lg p-3 mb-5 bg-body rounded">        
+    <div class="container mt-4 shadow-lg p-3 mb-5 bg-body rounded">
+            <div class="d-flex justify-content-between">       
         <button id="btnCrear" type="button" class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#modalUsuario">Crear</button>
+        <div class="d-flex">
+        <button id="btnBuscarEmail" type="submit" class="btn btn-success">Buscar</button>
+        
+        
+        <input id="buscarCorreo" class="form-control w-100 ms-2" type="search" placeholder="Buscar por email"/></div>
+        <button id="btnEliminarEmail" type="submit" class="btn btn-danger">Eliminar</button>
+      </div>
+        
+              <!--<div class="container mt-4 shadow-lg p-3 mb-5 bg-body rounded">
+                    <button id="btnCrear" type="button" class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#modalUsuario">Crear</button> -->
         <table id="tablaUsuarios" class="table mt-2 table-bordered table-striped">
             <thead>
                 <tr class="text-center">
@@ -59,11 +69,11 @@
           </div>
           <div class="mb-3">
             <label for="email" class="col-form-label">Email</label>
-            <input id="email" type="text" class="form-control" required>
+            <input id="email" type="email" class="form-control" required>
           </div>
           <div class="mb-3">
             <label for="prioridad" class="col-form-label">Prioridad</label>
-            <input id="prioridad" type="text" class="form-control" required>
+            <input id="prioridad" type="number" class="form-control"required>
           </div>      
       </div>
       <div class="modal-footer">

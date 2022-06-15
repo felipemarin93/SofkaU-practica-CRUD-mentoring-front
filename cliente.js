@@ -130,3 +130,45 @@ formUsuario.addEventListener('submit', (e)=>{
     modalUsuario.hide()
 })
 
+
+btnBuscarEmail.addEventListener("click", (event) => {
+    const correo = document.getElementById("buscarCorreo")
+    if (correo.value !== "") {
+        fetch(url + "buscar/" + correo.value)
+            .then(response => response.json())
+            .then(data => {
+                resultados = ''
+                mostrar(data)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+    else {
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                resultados = ''
+                mostrar(data)
+            })
+            .catch(error => console.log(error))
+    }
+})
+
+btnEliminarEmail.addEventListener("click", (event) => {
+    const correo = document.getElementById("buscarCorreo")
+    alertify.confirm("Desea eliminar el registro",
+        function () {
+            fetch(url + "eliminar/" + correo.value, {
+                method: 'DELETE'
+            })
+                .then(res => { res.json() })
+                .then(() => { location.reload() })
+            
+        },
+        function () {
+            alertify.error('Cancel')
+        })
+})
+
+
