@@ -57,7 +57,7 @@ const on = (element, event, selector, handler) => {
 on(document, 'click', '.btnBorrar', e => {
     const fila = e.target.parentNode.parentNode
     const id = fila.firstElementChild.innerHTML
-    alertify.confirm("This is a confirm dialog.",
+    alertify.confirm("Desea eliminar el registro.",
     function(){
         fetch(url+id, {
             method: 'DELETE'
